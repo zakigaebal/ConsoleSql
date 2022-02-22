@@ -11,6 +11,9 @@ namespace ConsoleSql
 	public class Program
 	{
 		public static string connStr = "Server=127.0.0.1;Database=dawoon;Uid=root;Pwd=ekdnsel;";
+		public static MySqlDataReader rdr = null;
+	 	public static string selectStr = "SELECT * FROM tab1 WHERE Id>=2";
+
 		static void Main(string[] args)
 		{
 			SelectUsingReader(selectStr, ref rdr);
@@ -28,9 +31,6 @@ namespace ConsoleSql
 		//사용
 	 	//SelectUsingReader("SELECT * FROM tab1 WHERE Id>=2", ref rdr);
 		//private static void SelectUsingReader(string selectStr, ref MySqlDataReader rdr)
-		public static MySqlDataReader rdr = null;
-	 	public static string selectStr = "SELECT * FROM tab1 WHERE Id>=2";
-
 		private static void SelectUsingReader(string selectStr, ref MySqlDataReader rdr)
 		{
 			string sql = selectStr;
